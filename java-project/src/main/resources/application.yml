@@ -1,0 +1,19 @@
+#  profiles:
+#    active: test, dev, custom
+
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/postgres
+    username: postgres
+    password: postgres
+    driver-class-name: org.postgresql.Driver
+  # This is the configuration for JPA / Hibernate which is used to create table at run-time
+  jpa:
+      hibernate:
+        ddl-auto: update # use 'create' for first time, then 'update' for subsequent runs, then create-drop if you want to drop on exit, then validate to just validate
+      show-sql: true
+      properties:
+        hibernate:
+          format_sql: true
+      database: postgresql
+      database-platform: org.hibernate.dialect.PostgreSQLDialect
