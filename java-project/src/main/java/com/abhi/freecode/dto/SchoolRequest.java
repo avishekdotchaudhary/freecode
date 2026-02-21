@@ -1,6 +1,6 @@
 package com.abhi.freecode.dto;
 
-public record SchoolDto(
+public record SchoolRequest(
         String name
 ) {
 }

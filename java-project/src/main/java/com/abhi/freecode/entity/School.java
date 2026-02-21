@@ -6,6 +6,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import org.springframework.context.annotation.Primary;
 
@@ -13,6 +14,7 @@ import java.util.List;
 
 @Entity
 @Data
+@Builder
 @AllArgsConstructor
 public class School {
     @Id
@@ -27,5 +29,6 @@ public class School {
     }
 
     public School(String name) {
+        this.name = name;
     }
 }
