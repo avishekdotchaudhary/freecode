@@ -3,6 +3,7 @@ import com.abhi.freecode.dto.StudentRequest;
 import com.abhi.freecode.dto.StudentResponse;
 import com.abhi.freecode.entity.Student;
 import com.abhi.freecode.service.StudentService;
+import jakarta.validation.Valid;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -28,7 +29,7 @@ public class StudentController {
     }
 
     @PostMapping()
-    public StudentResponse post(@RequestBody StudentRequest studentRequest){
+    public StudentResponse post(@Valid @RequestBody StudentRequest studentRequest){
         return studentService.saveStudent(studentRequest);
     }
 

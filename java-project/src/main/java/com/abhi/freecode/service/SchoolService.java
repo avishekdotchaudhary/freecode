@@ -44,12 +44,4 @@ public class SchoolService {
     public void deleteSchool(Integer id){
         this.schoolRepository.deleteById(id);
     }
-
-//    private School mapToEntity(SchoolRequest dto) {
-//        return new School(dto.name());
-//    }
-
-    //Make all code using dtos.
-    //Student mapper 5:27:41
-    //School mapper 5:41:32
 }
