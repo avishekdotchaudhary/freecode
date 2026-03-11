@@ -18,6 +18,11 @@ public class StudentProfile {
 
     }
 
+    public StudentProfile(Integer id, String bio) {
+        this.id = id;
+        this.bio = bio;
+    }
+
     public StudentProfile(Builder builder){
         this.id = builder.id;
         this.bio = builder.bio;

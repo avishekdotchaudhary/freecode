@@ -9,11 +9,18 @@ spring:
     driver-class-name: org.postgresql.Driver
   # This is the configuration for JPA / Hibernate which is used to create table at run-time
   jpa:
+    hibernate:
+      ddl-auto: update # use 'create' for first time, then 'update' for subsequent runs, then create-drop if you want to drop on exit, then validate to just validate
+    show-sql: true
+    properties:
       hibernate:
-        ddl-auto: update # use 'create' for first time, then 'update' for subsequent runs, then create-drop if you want to drop on exit, then validate to just validate
-      show-sql: true
-      properties:
-        hibernate:
-          format_sql: true
-      database: postgresql
-      database-platform: org.hibernate.dialect.PostgreSQLDialect
+        format_sql: true
+    database: postgresql
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+  servlet:
+    context-path: /api/v1
+
+  security:
+    user:
+      name: admin #default username is 'user', but we change it to 'admin' for simplicity
+      password: admin #default password is 'password', but we change it to 'admin' for simplicity

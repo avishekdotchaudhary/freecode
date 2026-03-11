@@ -3,13 +3,13 @@ package com.abhi.freecode.dto;
 import jakarta.validation.constraints.NotEmpty;
 
 public record StudentRequest(
-        @NotEmpty()
+        @NotEmpty(message = "First name must not be empty")
     String firstName,
-    @NotEmpty
+    @NotEmpty(message = "Last name must not be empty")
     String lastName,
-    @NotEmpty()
+    @NotEmpty(message = "Email must not be empty")
     String email,
-    int age
-
+    int age,
+    int schoolId
 ) {
 }

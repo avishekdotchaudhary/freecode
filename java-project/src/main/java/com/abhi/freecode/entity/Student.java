@@ -31,4 +31,11 @@ public class Student {
     @JoinColumn(name = "school_id")
     @JsonBackReference // It says no need to serialize parent which is school, to avoid infinite recursion during JSON serialization
     private School school;
+
+    public Student(String firstName, String lastName, String email, Integer age) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.email = email;
+        this.age = age;
+    }
 }

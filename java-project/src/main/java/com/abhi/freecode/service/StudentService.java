@@ -32,7 +32,7 @@ public class StudentService {
     }
 
     public StudentResponse saveStudent(StudentRequest studentRequest) {
-        var studentEntity = StudentMapper.toStudentEntity(studentRequest);
+        var studentEntity = StudentMapper.reqToStudentEntity(studentRequest);
         return StudentMapper.toStudentResponse(this.studentRepository.save(studentEntity));
     }
 
