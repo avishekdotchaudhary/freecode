@@ -1,7 +1,7 @@
 import "./App.css";
 import { HomePage } from "./pages/home/HomePage.jsx";
 import { Routes, Route } from "react-router";
-import { CheckoutPage } from "./pages/CheckoutPage.jsx";
+import { CheckoutPage } from "./pages/checkout/CheckoutPage.jsx";
 import { OrdersPage } from "./pages/OrdersPage.jsx";
 import { TrackingPage } from "./pages/TrackingPage.jsx";
 import { useEffect, useState } from "react";
@@ -11,9 +11,12 @@ function App() {
   const [cart, setCart] = useState([]);
 
   useEffect(() => {
-    axios.get("/api/cart-items?expand=product").then((response) => {
-      setCart(response.data);
-    });
+    const fetchAppData = async () => {
+      const cartItems = await axios.get("/api/cart-items?expand=product");
+      setCart(cartItems.data);
+    };
+
+    fetchAppData();
   }, []);
 
   return (
