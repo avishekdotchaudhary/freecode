@@ -1,5 +1,5 @@
 import "./App.css";
-import { HomePage } from "./pages/HomePage.jsx";
+import { HomePage } from "./pages/home/HomePage.jsx";
 import { Routes, Route } from "react-router";
 import { CheckoutPage } from "./pages/CheckoutPage.jsx";
 import { OrdersPage } from "./pages/OrdersPage.jsx";
